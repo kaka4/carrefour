@@ -9,3 +9,12 @@ export const getAllProductSucceeded = createAction(
   props<{ products: Array<Product> }>(),
 );
 export const getAllProductFailed = createAction(`${getAllProductsType} failed`, props<{ error: any }>());
+
+
+const getAllProductCategoriesType = '[Carrefour-Product-API] Get all product categories';
+export const getAllProductCategories = createAction(getAllProductCategoriesType);
+export const getAllProductCategoriesSucceeded = createAction(
+  `${getAllProductCategoriesType} succeeded`,
+  props<{ categories: Array<string> }>(),
+);
+export const getAllProductCategoriesFailed = createAction(`${getAllProductCategoriesType} failed`, props<{ error: any }>());

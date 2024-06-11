@@ -3,20 +3,20 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Store } from '@ngrx/store';
-import {HomePageActions, ProductApiActions} from "../actions";
+import { MenuAction, ProductApiActions} from "../actions";
 
 @Injectable()
-export class HomePageEffects {
+export class MenuEffects {
 
   constructor(
     private store: Store,
     private actions$: Actions,
   ) {}
 
-  handleGetAllProductsAtInit$ = createEffect(() => {
+  handleGetAllProductCategories$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(HomePageActions.getAllProductsAtInit),
-      switchMap((_action) => of(ProductApiActions.getAllProduct())),
+      ofType(MenuAction.getAllProductCategories),
+      switchMap(_action => of(ProductApiActions.getAllProductCategories())),
     );
   });
 }

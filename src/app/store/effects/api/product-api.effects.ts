@@ -24,4 +24,16 @@ export class ProductApiEffects {
       ),
     );
   });
+
+  getAllProductCategories$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ProductApiActions.getAllProductCategories),
+      switchMap((_action) =>
+        this.productClientService.getAllProductCategories().pipe(
+          switchMap((categories: Array<string>) => of(ProductApiActions.getAllProductCategoriesSucceeded({ categories }))),
+          catchError(({ error }) => of(ProductApiActions.getAllProductCategoriesFailed({ error }))),
+        ),
+      ),
+    );
+  });
 }

@@ -4,5 +4,10 @@
     "product": {
       "addToCart": "Ajouter au panier"
     }
+  },
+  "menu": {
+    "cart": "Panier",
+    "profile": "Mon Profil"
   }
 }
+
