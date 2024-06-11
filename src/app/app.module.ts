@@ -14,6 +14,7 @@ import {CARREFOUR_EFFECTS} from "./store/effects";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {ProductClientService} from "./core/services/product-client.service";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -42,7 +43,7 @@ export function createTranslateLoader(http: HttpClient) {
       serialize: { options: { map: true } },
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ProductClientService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
