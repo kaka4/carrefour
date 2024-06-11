@@ -1,5 +1,8 @@
 {
   "homePage": {
-    "title": "Accueil"
+    "title": "Accueil",
+    "product": {
+      "addToCart": "Ajouter au panier"
+    }
   }
 }

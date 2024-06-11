@@ -1,0 +1,18 @@
+<ion-card>
+  <img class="product-image" [alt]="product.title" [src]="product.image"/>
+  <ion-card-header>
+    <ion-card-title class="product-title">{{product.title}}</ion-card-title>
+    <ion-card-subtitle>{{product.category}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div class="star-rating">
+      <span *ngFor="let filled of filledStars" class="star" [class.filled]="filled">&#9733;</span>
+      <span class="rating-count">({{product.rating.count}})</span>
+    </div>
+  </ion-card-content>
+  <ion-button expand="full">
+    {{'homePage.product.addToCart' | translate}}
+    <ion-icon slot="end" name="cart"></ion-icon>
+  </ion-button>
+</ion-card>

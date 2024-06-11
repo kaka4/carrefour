@@ -1,0 +1,36 @@
+:host {
+  display: block;
+  height: 400px;
+  width: 400px;
+}
+.product-image {
+  height: 200px;
+  width: 100%;
+  padding: 5px;
+  object-fit: contain;
+}
+.product-title {
+  font-size: 16px;
+  height: 40px;
+}
+.description {
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.star-rating {
+  font-size: 18px;
+  .star {
+    color: #ccc;
+  }
+ //todo: use variable colors
+  .star.filled {
+    color: #ffbb00;
+  }
+
+  .rating-count {
+    font-size: 13px;
+    margin-left: 10px;
+  }
+}
+
