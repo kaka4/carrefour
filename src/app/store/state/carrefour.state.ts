@@ -13,6 +13,7 @@ export interface HomePageState {
 }
 
 export interface MenuState {
+  isLoading?: boolean;
   categories?: Array<string>;
 }
 

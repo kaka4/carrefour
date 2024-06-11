@@ -15,6 +15,7 @@
       <h2 class="catchphrase">Carrefour Home - Simplicité en 1 clic.</h2>
     </div>
     <div class="product-container">
+      <ion-spinner *ngIf="isLoading$ | async"></ion-spinner>
       <carrefour-product-card *ngFor="let product of allProducts$ | async" [product]="product"></carrefour-product-card>
     </div>
   </div>

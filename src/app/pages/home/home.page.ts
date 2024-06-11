@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {Store} from "@ngrx/store";
 import {HomePageActions} from "../../store/actions";
-import {selectAllProducts} from "../../store/selectors/home-page.selectors";
+import {isHomePageLoading, selectAllProducts} from "../../store/selectors/home-page.selectors";
 
 @Component({
   selector: 'app-folder',
@@ -12,6 +12,7 @@ import {selectAllProducts} from "../../store/selectors/home-page.selectors";
 export class HomePage implements OnInit {
 
   allProducts$ = this.store.select(selectAllProducts);
+  isLoading$ = this.store.select(isHomePageLoading);
 
   constructor(private store: Store) {}
 

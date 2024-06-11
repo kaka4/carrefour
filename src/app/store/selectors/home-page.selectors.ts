@@ -7,12 +7,17 @@ import {home} from "ionicons/icons";
 
 export const selectHomePageState = createSelector(
   selectCarrefourRoot,
-  (state: CarrefourState): HomePageState | undefined => state.homePage,
+  (state: CarrefourState): HomePageState | undefined => state.homePage
 );
 
 export const selectAllProducts = createSelector(
   selectHomePageState,
-  (homePage: HomePageState | undefined): Array<Product> | undefined => homePage?.products,
+  (homePage: HomePageState | undefined): Array<Product> | undefined => homePage?.products
+);
+
+export const isHomePageLoading = createSelector(
+  selectHomePageState,
+  (homePage: HomePageState | undefined): boolean | undefined => homePage?.isLoading
 );
 
 

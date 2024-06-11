@@ -7,10 +7,24 @@ const initialState: HomePageState | undefined = INITIAL_CARREFOUR_STATE.homePage
 
 const _homePageReducer = createReducer(
   initialState,
+  on(ProductApiActions.getAllProduct, (state): STATE => {
+    return {
+      ...state,
+      isLoading: true
+    };
+  }),
   on(ProductApiActions.getAllProductSucceeded, (state, { products }): STATE => {
     return {
       ...state,
+      isLoading: false,
       products
+    };
+  }),
+  on(ProductApiActions.getAllProductFailed, (state, { error }): STATE => {
+    return {
+      ...state,
+      isLoading: false,
+      //TODO: handle error
     };
   }),
 );
