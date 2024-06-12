@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {Store} from "@ngrx/store";
-import {MenuAction} from "./store/actions";
+import {MenuAction, SystemActions} from "./store/actions";
 import {selectProductCategories} from "./store/selectors/menu.selectors";
 import {RoutePathEnum} from "./app-routing.module";
 import {selectCountProductsInCart} from "./store/selectors/cart-page.selectors";
@@ -23,6 +23,6 @@ export class AppComponent implements OnInit{
   constructor(private translateService: TranslateService, private store: Store) {}
 
   ngOnInit(): void {
-    this.store.dispatch(MenuAction.getAllProductCategories())
+    this.store.dispatch(SystemActions.initApp());
   }
 }
