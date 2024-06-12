@@ -21,4 +21,11 @@ export const selectCountProductsInCart = createSelector(
 );
 
 
+export const selectSumAllProductsInCart = createSelector(
+  selectAllProductCart,
+  (productCart: Array<ProductCart> | undefined): number | undefined =>
+    productCart?.reduce((total, item) => total + item.quantity * item.product.price, 0)
+);
+
+
 

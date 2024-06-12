@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Store} from "@ngrx/store";
 import {HomePageActions} from "../../store/actions";
@@ -10,7 +10,7 @@ import {Product} from "../../core/models/product.model";
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage implements OnInit, OnDestroy{
 
   allProducts$ = this.store.select(selectAllProducts);
   isLoading$ = this.store.select(selectIsHomePageLoading);
@@ -20,6 +20,10 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(HomePageActions.getAllProductsAtInit());
+  }
+
+  ngOnDestroy() {
+    this.store.dispatch(HomePageActions.clearAllProductsAtDestroy())
   }
 
   addProductToCart(product: Product): void {

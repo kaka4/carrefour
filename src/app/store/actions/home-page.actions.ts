@@ -8,3 +8,6 @@ export const getAllProductsAtInit = createAction(
 
 export const addProductToCart = createAction(
   `${homePageActionPrefixType} Add a product to cart`, props<{ product: ProductBasicInfos }>());
+
+export const clearAllProductsAtDestroy = createAction(
+  `${homePageActionPrefixType} Clear product at destroy`);
