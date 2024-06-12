@@ -13,3 +13,18 @@ interface ProductRating {
   count: number;
 }
 
+export interface ProductBasicInfos {
+  id: string;
+  category: string;
+  title: string;
+  price: number;
+  image: string;
+}
+
+
+export interface ProductCart {
+  product: ProductBasicInfos;
+  quantity: number;
+}
+
+

@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, EventEmitter, Input, Output} from "@angular/core";
 import {Product} from "../../../core/models/product.model";
 
 @Component({
@@ -11,6 +11,9 @@ export class ProductCardComponent {
   @Input()
   product!: Product;
 
+  @Output()
+  addToCart = new EventEmitter<Product>();
+
 
   get filledStars(): boolean[] {
     const stars = [];
@@ -18,5 +21,9 @@ export class ProductCardComponent {
       stars.push(i <= Math.round(this.product.rating.rate));
     }
     return stars;
+  }
+
+  addProductToCart(): void {
+    this.addToCart.emit(this.product);
   }
 }

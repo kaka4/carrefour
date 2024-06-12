@@ -4,10 +4,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cart</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <h1>{{'cartPage.title' | translate}}</h1>
+  <p>{{'cartPage.subtitle' | translate: {qty: cartQuantity$ | async} }}</p>
+
+  <ion-grid class="cart-grid">
+    <ion-row class="header">
+      <ion-col size="5">Produit</ion-col>
+      <ion-col>Prix</ion-col>
+      <ion-col>Quantité</ion-col>
+      <ion-col>Total</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let productCart of productsCart$ | async">
+      <ion-col size="5">
+        <div class="basic-product">
+          <img class="product-img" [src]="productCart.product.image" [alt]="productCart.product.title + 'image'"/>
+          <div class="product-info">
+            <span class="category">{{productCart.product.category}}</span>
+            <span class="title">{{productCart.product.title}}</span>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>{{productCart.product.price | currency}}</ion-col>
+      <ion-col><div class="quantity">
+        <ion-icon class="quantity-icon" name="add-circle-outline" (click)="updateQuantity(productCart.product.id, productCart.quantity + 1)"></ion-icon>
+        {{productCart.quantity}}
+        <ion-icon class="quantity-icon" name="remove-circle-outline" (click)="updateQuantity(productCart.product.id, productCart.quantity - 1)"></ion-icon>
+      </div></ion-col>
+      <ion-col>{{productCart.quantity * productCart.product.price | currency}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

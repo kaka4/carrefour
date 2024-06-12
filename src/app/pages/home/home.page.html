@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="ion-padding">
 
   <div id="container">
     <div class="banner-container">
@@ -16,7 +16,9 @@
     </div>
     <div class="product-container">
       <ion-spinner *ngIf="isLoading$ | async"></ion-spinner>
-      <carrefour-product-card *ngFor="let product of allProducts$ | async" [product]="product"></carrefour-product-card>
+      <carrefour-product-card *ngFor="let product of allProducts$ | async"
+                              [product]="product"
+                              (addToCart)="addProductToCart($event)"></carrefour-product-card>
     </div>
   </div>
 </ion-content>

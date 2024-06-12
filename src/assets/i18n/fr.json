@@ -1,4 +1,8 @@
 {
+  "cartPage": {
+    "title": "Panier",
+    "subtitle": "Vous avez {{qty}} article(s) dans votre panier"
+  },
   "homePage": {
     "title": "Accueil",
     "product": {

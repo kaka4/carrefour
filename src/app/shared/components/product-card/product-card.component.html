@@ -11,7 +11,7 @@
       <span class="rating-count">({{product.rating.count}})</span>
     </div>
   </ion-card-content>
-  <ion-button expand="full">
+  <ion-button (click)="addProductToCart()" expand="full">
     {{'homePage.product.addToCart' | translate}}
     <ion-icon slot="end" name="cart"></ion-icon>
   </ion-button>
