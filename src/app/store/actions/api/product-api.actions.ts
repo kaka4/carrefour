@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import {Product} from "../../../core/models/product.model";
+import {Product, ProductCategory} from "../../../core/models/product.model";
 
 
 const getAllProductsType = '[Carrefour-Product-API] Get all products';
@@ -15,7 +15,7 @@ const getAllProductCategoriesType = '[Carrefour-Product-API] Get all product cat
 export const getAllProductCategories = createAction(getAllProductCategoriesType);
 export const getAllProductCategoriesSucceeded = createAction(
   `${getAllProductCategoriesType} succeeded`,
-  props<{ categories: Array<string> }>(),
+  props<{ categories: Array<ProductCategory> }>(),
 );
 export const getAllProductCategoriesFailed = createAction(`${getAllProductCategoriesType} failed`, props<{ error: any }>());
 

@@ -1,9 +1,11 @@
+export type ProductCategory = string;
+
 export interface Product {
   id: string;
   title: string;
   price: number;
   description: string;
-  category: string;
+  category: ProductCategory;
   image: string;
   rating: ProductRating;
 }

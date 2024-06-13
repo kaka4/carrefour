@@ -5,7 +5,7 @@ import { of } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
 import { ProductApiActions} from '../../actions';
 import {ProductClientService} from "../../../core/services/product-client.service";
-import {Product} from "../../../core/models/product.model";
+import {Product, ProductCategory} from "../../../core/models/product.model";
 
 
 @Injectable()
@@ -30,7 +30,7 @@ export class ProductApiEffects {
       ofType(ProductApiActions.getAllProductCategories),
       switchMap((_action) =>
         this.productClientService.getAllProductCategories().pipe(
-          switchMap((categories: Array<string>) => of(ProductApiActions.getAllProductCategoriesSucceeded({ categories }))),
+          switchMap((categories: Array<ProductCategory>) => of(ProductApiActions.getAllProductCategoriesSucceeded({ categories }))),
           catchError(({ error }) => of(ProductApiActions.getAllProductCategoriesFailed({ error }))),
         ),
       ),

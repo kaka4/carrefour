@@ -1,6 +1,5 @@
 :host {
   display: block;
-  height: 400px;
   width: 400px;
 }
 .product-image {
@@ -21,11 +20,10 @@
 .star-rating {
   font-size: 18px;
   .star {
-    color: #ccc;
+    color: var(--ion-color-medium);
   }
- //todo: use variable colors
   .star.filled {
-    color: #ffbb00;
+    color: var(--ion-color-warning);
   }
 
   .rating-count {

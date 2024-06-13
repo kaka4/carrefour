@@ -1,4 +1,4 @@
-import {Product, ProductBasicInfos, ProductCart} from "../../core/models/product.model";
+import {Product, ProductBasicInfos, ProductCart, ProductCategory} from "../../core/models/product.model";
 
 export const CARREFOUR_FEATURE_NAME = 'carrefour';
 
@@ -19,7 +19,7 @@ export interface CartPageState {
 }
 
 export interface MenuState {
-  categories?: Array<string>;
+  categories?: Array<ProductCategory>;
 }
 
 export interface CategoryPageState {

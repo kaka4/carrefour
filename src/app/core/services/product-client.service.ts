@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {Product} from "../models/product.model";
+import {Product, ProductCategory} from "../models/product.model";
 
 @Injectable()
 export class ProductClientService {
@@ -13,12 +13,8 @@ export class ProductClientService {
     return this.httpClient.get<Array<Product>>(`${this.SERVICE_BASE_URL}`);
   }
 
-  getProduct(productId: string): Observable<Product> {
-    return this.httpClient.get<Product>(`${this.SERVICE_BASE_URL}/${productId}`);
-  }
-
-  getAllProductCategories(): Observable<Array<string>> {
-    return this.httpClient.get<Array<string>>(`${this.SERVICE_BASE_URL}/categories`);
+  getAllProductCategories(): Observable<Array<ProductCategory>> {
+    return this.httpClient.get<Array<ProductCategory>>(`${this.SERVICE_BASE_URL}/categories`);
   }
 
   getAllProductsFromCategory(categoryId: string):Observable<Array<Product>>  {
