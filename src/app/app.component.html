@@ -26,7 +26,7 @@
           <ion-list-header>{{'menu.category' | translate}}</ion-list-header>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let label of categories$ | async">
-            <ion-item  routerDirection="root" lines="none" [routerLink]="routePathEnum.CATEGORY + '/' + label" routerLinkActive="selected">
+            <ion-item lines="none" [routerLink]="routePathEnum.CATEGORY + '/' + label" routerLinkActive="selected">
               <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
               <ion-label>{{ label | titlecase }}</ion-label>
             </ion-item>

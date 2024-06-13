@@ -8,6 +8,7 @@ import {CartPageRoutingModule} from './cart-routing.module';
 
 import {CartPage} from './cart.page';
 import {TranslateModule} from "@ngx-translate/core";
+import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {TranslateModule} from "@ngx-translate/core";
     FormsModule,
     IonicModule,
     CartPageRoutingModule,
-    TranslateModule
+    TranslateModule,
+    SharedModule
   ],
   declarations: [CartPage]
 })
