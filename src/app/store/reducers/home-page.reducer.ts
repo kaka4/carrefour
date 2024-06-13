@@ -10,6 +10,7 @@ const _homePageReducer = createReducer(
   on(HomePageActions.getAllProductsAtInit, (state): STATE => {
     return {
       ...state,
+      products: undefined,
       isLoading: true
     };
   }),
@@ -26,10 +27,7 @@ const _homePageReducer = createReducer(
       isLoading: false,
       //TODO: handle error
     };
-  }),
-  on(HomePageActions.clearAllProductsAtDestroy, (state): STATE =>
-     undefined
-  ),
+  })
 );
 
 export function homePageReducer(state: HomePageState | undefined, action: Action): HomePageState | undefined {

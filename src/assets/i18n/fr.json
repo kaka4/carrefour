@@ -1,18 +1,25 @@
 {
+  "categoryPage": {
+    "product": {
+      "addToCart": "Ajouter au panier"
+    }
+  },
   "cartPage": {
     "freeDelivery": "Offert",
     "title": "Panier",
     "subtitle": "Vous avez {{qty}} article(s) dans votre panier"
   },
   "homePage": {
-    "title": "Accueil",
-    "product": {
-      "addToCart": "Ajouter au panier"
-    }
+    "title": "Accueil"
   },
   "menu": {
     "cart": "Panier",
     "profile": "Mon Profil"
+  },
+  "shared": {
+    "productCard": {
+      "addToCart": "Ajouter au panier"
+    }
   }
 }
 

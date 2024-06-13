@@ -21,7 +21,7 @@ export class ProductClientService {
     return this.httpClient.get<Array<string>>(`${this.SERVICE_BASE_URL}/categories`);
   }
 
-  getAllProductInSpecificCategory(categoryId: string):Observable<Array<Product>>  {
-    return this.httpClient.get<Array<Product>>(`${this.SERVICE_BASE_URL}/categories/${categoryId}`);
+  getAllProductsFromCategory(categoryId: string):Observable<Array<Product>>  {
+    return this.httpClient.get<Array<Product>>(`${this.SERVICE_BASE_URL}/category/${categoryId}`);
   }
 }

@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{categoryId}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="container">
+    <h1>{{categoryId | titlecase}}</h1>
+    <div class="product-container">
+      <ion-spinner *ngIf="isLoading$ | async"></ion-spinner>
+      <carrefour-product-card *ngFor="let product of products$ | async"
+                              [product]="product"
+                              (addToCart)="addProductToCart($event)"></carrefour-product-card>
+    </div>
+  </div>
+</ion-content>
+

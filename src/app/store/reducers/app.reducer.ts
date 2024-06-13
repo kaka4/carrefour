@@ -2,7 +2,9 @@ import { InjectionToken } from '@angular/core';
 import { ActionReducerMap } from '@ngrx/store';
 import * as fromHomePage from './home-page.reducer';
 import * as fromMenu from './menu.reducer';
-import * as fromCart from './cart-page.reducer';
+import * as fromCartPage from './cart-page.reducer';
+import * as fromCategoryPage from './category-page.reducer';
+
 
 
 
@@ -13,6 +15,7 @@ export const CARREFOUR_REDUCERS = new InjectionToken<ActionReducerMap<CarrefourS
   factory: (): ActionReducerMap<CarrefourState> => ({
     homePage: fromHomePage.homePageReducer,
     menu: fromMenu.menuReducer,
-    cartPage:fromCart.cartPageReducer
+    cartPage:fromCartPage.cartPageReducer,
+    categoryPage: fromCategoryPage.categoryPageReducer
   }),
 });

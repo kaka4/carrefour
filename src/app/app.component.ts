@@ -15,7 +15,6 @@ export class AppComponent implements OnInit{
 
   public menuList = [
     { title: this.translateService.get('menu.cart'), url: `/${this.routePathEnum.CART}`, icon: 'cart' },
-    { title: this.translateService.get('menu.profile'), url: '/user', icon: 'person' },
   ];
   public categories$ = this.store.select(selectProductCategories);
   public cartQuantity$ = this.store.select(selectCountProductsInCart);

@@ -2,7 +2,7 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
-        <ion-list id="inbox-list">
+        <ion-list>
 
           <a routerLink="" class="logo-container">
             <img class="logo" alt="app logo" src="assets/img/logo.png"/>
@@ -23,13 +23,17 @@
           </ion-menu-toggle>
         </ion-list>
 
-        <ion-list id="labels-list">
+        <ion-list>
           <ion-list-header>Categories</ion-list-header>
 
-          <ion-item *ngFor="let label of categories$ | async" lines="none">
-            <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label | titlecase }}</ion-label>
-          </ion-item>
+          <ion-menu-toggle auto-hide="false" *ngFor="let label of categories$ | async">
+            <ion-item  routerDirection="root" lines="none" [routerLink]="routePathEnum.CATEGORY + '/' + label" routerLinkActive="selected">
+              <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+              <ion-label>{{ label | titlecase }}</ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+
         </ion-list>
       </ion-content>
     </ion-menu>

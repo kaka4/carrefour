@@ -3,8 +3,9 @@ import {Product, ProductBasicInfos, ProductCart} from "../../core/models/product
 export const CARREFOUR_FEATURE_NAME = 'carrefour';
 
 export interface CarrefourState {
-  homePage?: HomePageState;
+  categoryPage?: CategoryPageState;
   cartPage?: CartPageState;
+  homePage?: HomePageState;
   menu?: MenuState;
 }
 
@@ -13,19 +14,23 @@ export interface HomePageState {
   products?: Array<Product>;
 }
 
-
 export interface CartPageState {
   products: Array<ProductCart>;
 }
-
 
 export interface MenuState {
   categories?: Array<string>;
 }
 
+export interface CategoryPageState {
+  isLoading?: boolean;
+  products?: Array<Product>;
+}
+
 
 export const INITIAL_CARREFOUR_STATE: CarrefourState = {
   homePage: undefined,
-  cartPage: { products: []},
-  menu: { categories: undefined}
+  categoryPage: undefined,
+  cartPage: undefined,
+  menu: undefined
 };

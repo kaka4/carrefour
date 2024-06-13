@@ -10,7 +10,7 @@ import {Product} from "../../core/models/product.model";
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit, OnDestroy{
+export class HomePage implements OnInit{
 
   allProducts$ = this.store.select(selectAllProducts);
   isLoading$ = this.store.select(selectIsHomePageLoading);
@@ -22,9 +22,6 @@ export class HomePage implements OnInit, OnDestroy{
     this.store.dispatch(HomePageActions.getAllProductsAtInit());
   }
 
-  ngOnDestroy() {
-    this.store.dispatch(HomePageActions.clearAllProductsAtDestroy())
-  }
 
   addProductToCart(product: Product): void {
     this.store.dispatch(HomePageActions.addProductToCart({
