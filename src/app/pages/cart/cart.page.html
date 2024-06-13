@@ -14,13 +14,13 @@
   <div class="cart-container" *ngIf="(productsCart$ | async)?.length">
     <ion-grid class="cart-card cart-grid">
       <ion-row class="header">
-        <ion-col size="5">{{ 'cartPage.gridHeader.product' | translate }}</ion-col>
+        <ion-col size-xs="3" size-md="7">{{ 'cartPage.gridHeader.product' | translate }}</ion-col>
         <ion-col>{{ 'cartPage.gridHeader.price' | translate }}</ion-col>
         <ion-col>{{ 'cartPage.gridHeader.quantity' | translate }}</ion-col>
         <ion-col>{{ 'cartPage.gridHeader.total' | translate }}</ion-col>
       </ion-row>
       <ion-row *ngFor="let productCart of productsCart$ | async">
-        <ion-col size="5">
+        <ion-col size-xs="3" size-md="7">
           <div class="basic-product">
             <img class="product-img" [src]="productCart.product.image" [alt]="productCart.product.title + 'image'"/>
             <div class="product-info">

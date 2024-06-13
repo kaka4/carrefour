@@ -19,12 +19,8 @@ const PRICE_MULTIPLIER = 10; // ion-range max value is set to 100
 })
 export class HomePage implements OnInit{
 
-
   products$ = this.store.select(selectAllProducts);
   isLoading$ = this.store.select(selectIsHomePageLoading);
-  pinFormatter(value: number) {
-    return `${value * PRICE_MULTIPLIER}$`;
-  }
 
   constructor(private store: Store) {
   }
@@ -46,10 +42,14 @@ export class HomePage implements OnInit{
     }))
   }
 
-  priceFilterChanged(event: RangeCustomEvent){
+  priceFilterChanged(event: RangeCustomEvent): void{
     if (typeof event.detail.value !== "number") {
       this.products$ = this.store.select(selectProductsByPriceRange(event.detail.value.lower * PRICE_MULTIPLIER, event.detail.value.upper * PRICE_MULTIPLIER));
     }
+  }
+
+  pinFormatter(value: number): string {
+    return `$${value * PRICE_MULTIPLIER}`;
   }
 
 }

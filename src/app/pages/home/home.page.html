@@ -15,9 +15,9 @@
     </div>
     <h1>{{'homePage.subtitle' | translate}}</h1>
     <ion-range (ionChange)="priceFilterChanged($event)"
-               aria-label="Dual Knobs Range"
+               aria-label="price filter"
                labelPlacement="start"
-               label="Filtrer par prix"
+               [label]="'homePage.priceFilter' | translate"
                [pin]="true"
                [pinFormatter]="pinFormatter"
                [dualKnobs]="true"

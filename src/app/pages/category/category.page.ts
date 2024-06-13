@@ -15,7 +15,7 @@ import {Product} from "../../core/models/product.model";
   styleUrls: ['./category.page.scss'],
 })
 export class CategoryPage implements OnInit, OnDestroy {
-  public categoryId!: string | null;
+  categoryId!: string | null;
 
   products$ = this.store.select(selectAllProductsFromCategory);
   isLoading$ = this.store.select(selectIsCategoryPageLoading);
@@ -24,7 +24,6 @@ export class CategoryPage implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription.add(this.route.paramMap.subscribe((params: ParamMap) => {
-      console.log("test");
       this.categoryId = params.get('categoryId');
       if (this.categoryId){
         this.store.dispatch(CategoryPageActions.getAllProductsFromCategory({categoryId: this.categoryId}))
@@ -36,7 +35,7 @@ export class CategoryPage implements OnInit, OnDestroy {
   }
 
   addProductToCart(product: Product): void {
-    this.store.dispatch(HomePageActions.addProductToCart({
+    this.store.dispatch(CategoryPageActions.addProductToCart({
       product: {
         id: product.id,
         category: product.category,

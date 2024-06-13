@@ -1,6 +1,6 @@
 import {Action, createReducer, on} from '@ngrx/store';
 import {CartPageState, INITIAL_CARREFOUR_STATE} from '../state/carrefour.state';
-import {CartPageActions, HomePageActions, SystemActions} from "../actions";
+import {CartPageActions, CategoryPageActions, HomePageActions, SystemActions} from "../actions";
 
 type STATE = CartPageState | undefined;
 const initialState: CartPageState | undefined = INITIAL_CARREFOUR_STATE.cartPage;
@@ -8,7 +8,7 @@ const initialState: CartPageState | undefined = INITIAL_CARREFOUR_STATE.cartPage
 const _cartPageReducer = createReducer(
   initialState,
 
-  on(HomePageActions.addProductToCart, (state, {product}) => {
+  on(HomePageActions.addProductToCart, CategoryPageActions.addProductToCart, (state, {product}): STATE  => {
     if (state?.products){
       const existingProductIndex = state.products.findIndex(p => p.product.id === product.id);
 
@@ -27,7 +27,7 @@ const _cartPageReducer = createReducer(
     }
     return state;
   }),
-  on(CartPageActions.updateProductQuantity, (state, {productId, quantity}) => {
+  on(CartPageActions.updateProductQuantity, (state, {productId, quantity}): STATE  => {
     if(state?.products){
       const productIndex = state.products.findIndex(p => p.product.id === productId);
 
@@ -48,7 +48,7 @@ const _cartPageReducer = createReducer(
     }
     return state;
   }),
-  on(SystemActions.setCartFromLocalStorageIntoStore, (state, {products}) => ({
+  on(SystemActions.setCartFromLocalStorageIntoStore, (state, {products}): STATE => ({
     ...state,
     products
   })),
