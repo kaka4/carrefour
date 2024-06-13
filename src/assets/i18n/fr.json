@@ -5,14 +5,32 @@
     }
   },
   "cartPage": {
+    "cartRecap": {
+      "summary": "Récapitulatif",
+      "total": "Total",
+      "totalWithoutDelivery": "Total (hors livraison)",
+      "delivery": "Livraison",
+      "order": "Commander"
+    },
+    "gridHeader": {
+      "product": "Produit",
+      "price": "Prix",
+      "quantity": "Quantité",
+      "total": "Total"
+    },
     "freeDelivery": "Offert",
     "title": "Panier",
     "subtitle": "Vous avez {{qty}} article(s) dans votre panier"
   },
   "homePage": {
-    "title": "Accueil"
+    "title": "Accueil",
+    "subtitle": "Tous nos produits"
   },
   "menu": {
+    "hello": "Bonjour",
+    "accountMock": "reviewer@carrefour.fr",
+    "home": "Accueil",
+    "category": "Catégories",
     "cart": "Panier",
     "profile": "Mon Profil"
   },

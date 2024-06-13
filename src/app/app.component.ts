@@ -14,6 +14,7 @@ export class AppComponent implements OnInit{
   routePathEnum = RoutePathEnum;
 
   public menuList = [
+    { title: this.translateService.get('menu.home'), url: `/${this.routePathEnum.HOME}`, icon: 'home' },
     { title: this.translateService.get('menu.cart'), url: `/${this.routePathEnum.CART}`, icon: 'cart' },
   ];
   public categories$ = this.store.select(selectProductCategories);

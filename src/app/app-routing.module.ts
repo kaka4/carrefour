@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 export enum RoutePathEnum {
   CART = 'cart',
   CATEGORY = 'category',
-  HOME = ''
+  HOME = 'home'
 }
 
 const routes: Routes = [

@@ -4,12 +4,11 @@
       <ion-content>
         <ion-list>
 
-          <a routerLink="" class="logo-container">
-            <img class="logo" alt="app logo" src="assets/img/logo.png"/>
-            <h4>Carrefour</h4>
+          <a [routerLink]="routePathEnum.HOME" class="logo-container">
+            <img class="logo" alt="carrefour logo" src="assets/img/logo.png"/>
           </a>
-          <ion-list-header>Bonjour</ion-list-header>
-          <ion-note>reviewer&#64;carrefour.fr</ion-note>
+          <ion-list-header>{{'menu.hello' | translate}}</ion-list-header>
+          <ion-note>{{'menu.accountMock' | translate}}</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of menuList; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
@@ -24,7 +23,7 @@
         </ion-list>
 
         <ion-list>
-          <ion-list-header>Categories</ion-list-header>
+          <ion-list-header>{{'menu.category' | translate}}</ion-list-header>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let label of categories$ | async">
             <ion-item  routerDirection="root" lines="none" [routerLink]="routePathEnum.CATEGORY + '/' + label" routerLinkActive="selected">

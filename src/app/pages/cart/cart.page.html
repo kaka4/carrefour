@@ -14,10 +14,10 @@
   <div class="cart-container" *ngIf="(productsCart$ | async)?.length">
     <ion-grid class="cart-card cart-grid">
       <ion-row class="header">
-        <ion-col size="5">Produit</ion-col>
-        <ion-col>Prix</ion-col>
-        <ion-col>Quantité</ion-col>
-        <ion-col>Total</ion-col>
+        <ion-col size="5">{{ 'cartPage.gridHeader.product' | translate }}</ion-col>
+        <ion-col>{{ 'cartPage.gridHeader.price' | translate }}</ion-col>
+        <ion-col>{{ 'cartPage.gridHeader.quantity' | translate }}</ion-col>
+        <ion-col>{{ 'cartPage.gridHeader.total' | translate }}</ion-col>
       </ion-row>
       <ion-row *ngFor="let productCart of productsCart$ | async">
         <ion-col size="5">
@@ -44,21 +44,21 @@
     </ion-grid>
 
     <div class="cart-card cart-recap">
-      <h3>Récapitulatif</h3>
+      <h3>{{'cartPage.cartRecap.summary' | translate}}</h3>
       <div class="cart-recap-line">
-        <span>Total (hors livraison)</span>
+        <span>{{'cartPage.cartRecap.totalWithoutDelivery' | translate }}</span>
         <span>{{productsTotal$ | async | currency}}</span>
       </div>
       <div class="cart-recap-line">
-        <span>Livraison</span>
+        <span>{{ 'cartPage.cartRecap.delivery' | translate }}</span>
         <span>{{(deliveryFee$ | async) === 0 ? ('cartPage.freeDelivery' | translate) :  (deliveryFee$ | async) | currency}}</span>
       </div>
       <div class="cart-recap-line total-line">
-        <span>Total</span>
+        <span>{{'cartPage.cartRecap.total' | translate }}</span>
         <span>{{totalToPay$ | async | currency}}</span>
       </div>
       <ion-button class="buy-button" expand="full" (click)="order()" >
-        Commander
+        {{'cartPage.cartRecap.order' | translate }}
       </ion-button>
 
     </div>

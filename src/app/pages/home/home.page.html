@@ -12,8 +12,8 @@
   <div id="container">
     <div class="banner-container">
       <img class='banner-img' alt="home page banner" src="assets/img/home-banner.jpg">
-        <h2 class="catchphrase">Carrefour Home - Simplicité en 1 clic.</h2>
     </div>
+    <h1>{{'homePage.subtitle' | translate}}</h1>
     <div class="product-container">
       <ion-spinner *ngIf="isLoading$ | async"></ion-spinner>
       <carrefour-product-card *ngFor="let product of allProducts$ | async"
