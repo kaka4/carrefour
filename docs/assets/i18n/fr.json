@@ -1,17 +1,43 @@
 {
   "cartPage": {
-    "title": "Panier",
-    "subtitle": "Vous avez {{qty}} article(s) dans votre panier"
+    "cartRecap": {
+      "delivery": "Livraison",
+      "order": "Commander",
+      "summary": "Récapitulatif",
+      "total": "Total",
+      "totalWithoutDelivery": "Total (hors livraison)"
+    },
+    "freeDelivery": "Offert",
+    "gridHeader": {
+      "price": "Prix",
+      "product": "Produit",
+      "quantity": "Quantité",
+      "total": "Total"
+    },
+    "subtitle": "Vous avez {{qty}} article(s) dans votre panier",
+    "title": "Panier"
   },
-  "homePage": {
-    "title": "Accueil",
+  "categoryPage": {
     "product": {
       "addToCart": "Ajouter au panier"
     }
   },
+  "homePage": {
+    "priceFilter": "Filtrer par prix",
+    "subtitle": "Tous nos produits",
+    "title": "Accueil"
+  },
   "menu": {
+    "accountMock": "reviewer@carrefour.fr",
     "cart": "Panier",
+    "category": "Catégories",
+    "hello": "Bonjour",
+    "home": "Accueil",
     "profile": "Mon Profil"
+  },
+  "shared": {
+    "productCard": {
+      "addToCart": "Ajouter au panier"
+    }
   }
 }
-

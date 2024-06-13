@@ -1,5 +1,43 @@
 {
+  "cartPage": {
+    "cartRecap": {
+      "delivery": "Delivery",
+      "order": "Order",
+      "summary": "Summary",
+      "total": "Total",
+      "totalWithoutDelivery": "Total (excluding delivery)"
+    },
+    "freeDelivery": "Free",
+    "gridHeader": {
+      "price": "Price",
+      "product": "Product",
+      "quantity": "Quantity",
+      "total": "Total"
+    },
+    "subtitle": "You have {{qty}} item(s) in your cart",
+    "title": "Cart"
+  },
+  "categoryPage": {
+    "product": {
+      "addToCart": "Add to Cart"
+    }
+  },
   "homePage": {
+    "priceFilter": "Filter by price",
+    "subtitle": "All our products",
     "title": "Home"
+  },
+  "menu": {
+    "accountMock": "reviewer@carrefour.fr",
+    "cart": "Cart",
+    "category": "Categories",
+    "hello": "Hello",
+    "home": "Home",
+    "profile": "My Profile"
+  },
+  "shared": {
+    "productCard": {
+      "addToCart": "Add to Cart"
+    }
   }
 }
