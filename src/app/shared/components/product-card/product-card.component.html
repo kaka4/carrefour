@@ -10,6 +10,8 @@
       <span *ngFor="let filled of filledStars" class="star" [class.filled]="filled">&#9733;</span>
       <span class="rating-count">({{product.rating.count}})</span>
     </div>
+    <span class="price">{{product.price | currency}}</span>
+
   </ion-card-content>
   <ion-button (click)="addProductToCart()" expand="full">
     {{'shared.productCard.addToCart' | translate}}

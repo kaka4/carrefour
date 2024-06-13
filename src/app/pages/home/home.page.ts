@@ -1,9 +1,16 @@
-import {Component, inject, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Store} from "@ngrx/store";
+import {Component, OnInit} from '@angular/core';
+import {select, Store} from "@ngrx/store";
 import {HomePageActions} from "../../store/actions";
-import {selectIsHomePageLoading, selectAllProducts} from "../../store/selectors/home-page.selectors";
+import {
+  selectAllProducts,
+  selectIsHomePageLoading,
+  selectProductsByPriceRange
+} from "../../store/selectors/home-page.selectors";
 import {Product} from "../../core/models/product.model";
+import {RangeCustomEvent} from "@ionic/angular";
+
+const PRICE_MULTIPLIER = 10; // ion-range max value is set to 100
+
 
 @Component({
   selector: 'app-folder',
@@ -12,8 +19,12 @@ import {Product} from "../../core/models/product.model";
 })
 export class HomePage implements OnInit{
 
-  allProducts$ = this.store.select(selectAllProducts);
+
+  products$ = this.store.select(selectAllProducts);
   isLoading$ = this.store.select(selectIsHomePageLoading);
+  pinFormatter(value: number) {
+    return `${value * PRICE_MULTIPLIER}$`;
+  }
 
   constructor(private store: Store) {
   }
@@ -34,4 +45,11 @@ export class HomePage implements OnInit{
       }
     }))
   }
+
+  priceFilterChanged(event: RangeCustomEvent){
+    if (typeof event.detail.value !== "number") {
+      this.products$ = this.store.select(selectProductsByPriceRange(event.detail.value.lower * PRICE_MULTIPLIER, event.detail.value.upper * PRICE_MULTIPLIER));
+    }
+  }
+
 }
