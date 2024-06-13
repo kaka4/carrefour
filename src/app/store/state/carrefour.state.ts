@@ -1,4 +1,4 @@
-import {Product, ProductBasicInfos, ProductCart, ProductCategory} from "../../core/models/product.model";
+import {Product, ProductCart, ProductCategory} from "../../core/models/product.model";
 
 export const CARREFOUR_FEATURE_NAME = 'carrefour';
 
@@ -31,6 +31,6 @@ export interface CategoryPageState {
 export const INITIAL_CARREFOUR_STATE: CarrefourState = {
   homePage: undefined,
   categoryPage: undefined,
-  cartPage: undefined,
+  cartPage: { products: []},
   menu: undefined
 };

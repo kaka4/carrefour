@@ -20,6 +20,11 @@ const routes: Routes = [
     path: RoutePathEnum.CATEGORY,
     loadChildren: () => import('./pages/category/category.module').then(m => m.CategoryPageModule)
   },
+  {
+    path: '**',
+    redirectTo: RoutePathEnum.HOME,
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
