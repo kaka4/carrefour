@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from "@ngrx/store";
-import {selectAllProductCart, selectCountProductsInCart} from "../../store/selectors/cart-page.selectors";
+import {
+  selectAllProductCart, selectCartDeliveryFee,
+  selectCountProductsInCart,
+  selectSumAllProductsInCart, selectTotalSumToPay
+} from "../../store/selectors/cart-page.selectors";
 import {CartPageActions} from "../../store/actions";
 
 @Component({
@@ -11,12 +15,20 @@ import {CartPageActions} from "../../store/actions";
 export class CartPage {
 
   productsCart$ = this.store.select(selectAllProductCart);
-  public cartQuantity$ = this.store.select(selectCountProductsInCart);
+  cartQuantity$ = this.store.select(selectCountProductsInCart);
+  productsTotal$ = this.store.select(selectSumAllProductsInCart);
+  deliveryFee$ = this.store.select(selectCartDeliveryFee);
+  totalToPay$ = this.store.select(selectTotalSumToPay);
+
 
   constructor(private store: Store) { }
 
   updateQuantity(productId: string, newQty: number): void{
     this.store.dispatch(CartPageActions.updateProductQuantity({productId: productId, quantity: newQty}))
+  }
+
+  order():void {
+    console.log("...Not implemented...")
   }
 
 }

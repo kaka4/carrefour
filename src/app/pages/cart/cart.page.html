@@ -8,41 +8,59 @@
   <h1>{{'cartPage.title' | translate}}</h1>
   <p>{{'cartPage.subtitle' | translate: {qty: cartQuantity$ | async} }}</p>
 
-  <ion-grid class="cart-grid">
-    <ion-row class="header">
-      <ion-col size="5">Produit</ion-col>
-      <ion-col>Prix</ion-col>
-      <ion-col>Quantité</ion-col>
-      <ion-col>Total</ion-col>
-    </ion-row>
-    <ion-row *ngFor="let productCart of productsCart$ | async">
-      <ion-col size="5">
-        <div class="basic-product">
-          <img class="product-img" [src]="productCart.product.image" [alt]="productCart.product.title + 'image'"/>
-          <div class="product-info">
-            <span class="category">{{productCart.product.category}}</span>
-            <span class="title">{{productCart.product.title}}</span>
+  <div class="cart-container" *ngIf="(productsCart$ | async)?.length">
+    <ion-grid class="cart-card cart-grid">
+      <ion-row class="header">
+        <ion-col size="5">Produit</ion-col>
+        <ion-col>Prix</ion-col>
+        <ion-col>Quantité</ion-col>
+        <ion-col>Total</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let productCart of productsCart$ | async">
+        <ion-col size="5">
+          <div class="basic-product">
+            <img class="product-img" [src]="productCart.product.image" [alt]="productCart.product.title + 'image'"/>
+            <div class="product-info">
+              <span class="category">{{productCart.product.category}}</span>
+              <span class="title">{{productCart.product.title}}</span>
+            </div>
           </div>
-        </div>
-      </ion-col>
-      <ion-col>{{productCart.product.price | currency}}</ion-col>
-      <ion-col>
-        <div class="quantity">
-          <ion-icon class="quantity-icon" name="remove-circle-outline"
-                    (click)="updateQuantity(productCart.product.id, productCart.quantity - 1)"></ion-icon>
-          {{productCart.quantity}}
-          <ion-icon class="quantity-icon" name="add-circle-outline"
-                    (click)="updateQuantity(productCart.product.id, productCart.quantity + 1)"></ion-icon>
-        </div>
-      </ion-col>
-      <ion-col>{{productCart.quantity * productCart.product.price | currency}}</ion-col>
-    </ion-row>
-  </ion-grid>
+        </ion-col>
+        <ion-col>{{productCart.product.price | currency}}</ion-col>
+        <ion-col>
+          <div class="quantity">
+            <ion-icon class="quantity-icon" name="remove-circle"
+                      (click)="updateQuantity(productCart.product.id, productCart.quantity - 1)"></ion-icon>
+            {{productCart.quantity}}
+            <ion-icon class="quantity-icon" name="add-circle"
+                      (click)="updateQuantity(productCart.product.id, productCart.quantity + 1)"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col>{{productCart.quantity * productCart.product.price | currency}}</ion-col>
+      </ion-row>
+    </ion-grid>
 
-  <div class="cart-recap">
-    <h3>Récpitulatif</h3>
+    <div class="cart-card cart-recap">
+      <h3>Récapitulatif</h3>
+      <div class="cart-recap-line">
+        <span>Total (hors livraison)</span>
+        <span>{{productsTotal$ | async | currency}}</span>
+      </div>
+      <div class="cart-recap-line">
+        <span>Livraison</span>
+        <span>{{(deliveryFee$ | async) === 0 ? ('cartPage.freeDelivery' | translate) :  (deliveryFee$ | async) | currency}}</span>
+      </div>
+      <div class="cart-recap-line total-line">
+        <span>Total</span>
+        <span>{{totalToPay$ | async | currency}}</span>
+      </div>
+      <ion-button class="buy-button" expand="full" (click)="order()" >
+        Commander
+      </ion-button>
 
+    </div>
   </div>
+
 
 
 
