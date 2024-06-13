@@ -1,4 +1,4 @@
-import { Type } from '@angular/core';
+import {Type} from '@angular/core';
 import {HomePageEffects} from "./home-page.effects";
 import {ProductApiEffects} from "./api/product-api.effects";
 import {MenuEffects} from "./menu.effects";

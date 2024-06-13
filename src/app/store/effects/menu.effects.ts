@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { switchMap } from 'rxjs/operators';
-import { of } from 'rxjs';
-import { Store } from '@ngrx/store';
+import {Injectable} from '@angular/core';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {switchMap} from 'rxjs/operators';
+import {of} from 'rxjs';
+import {Store} from '@ngrx/store';
 import {MenuAction, ProductApiActions, SystemActions} from "../actions";
 
 @Injectable()

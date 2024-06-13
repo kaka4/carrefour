@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {concatLatestFrom} from "@ngrx/operators";
-import { Store } from '@ngrx/store';
-import {CartPageActions, HomePageActions, MenuAction, ProductApiActions, SystemActions} from "../actions";
+import {Store} from '@ngrx/store';
+import {CartPageActions, HomePageActions, SystemActions} from "../actions";
 import {selectAllProductCart} from "../selectors/cart-page.selectors";
 import {EMPTY, mergeMap, of, tap} from "rxjs";
 import {switchMap} from "rxjs/operators";

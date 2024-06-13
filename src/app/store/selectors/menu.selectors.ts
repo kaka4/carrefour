@@ -1,8 +1,7 @@
 import {selectCarrefourRoot} from "./main.selectors";
-import {CarrefourState, HomePageState, MenuState} from "../state/carrefour.state";
+import {CarrefourState, MenuState} from "../state/carrefour.state";
 import {createSelector} from "@ngrx/store";
-import {Product, ProductCategory} from "../../core/models/product.model";
-import {home} from "ionicons/icons";
+import {ProductCategory} from "../../core/models/product.model";
 
 
 const selectMenuState = createSelector(

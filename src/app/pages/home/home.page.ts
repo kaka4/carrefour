@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {select, Store} from "@ngrx/store";
+import {Store} from "@ngrx/store";
 import {HomePageActions} from "../../store/actions";
 import {
   selectAllProducts,

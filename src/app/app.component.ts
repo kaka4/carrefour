@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {Store} from "@ngrx/store";
-import {MenuAction, SystemActions} from "./store/actions";
+import {SystemActions} from "./store/actions";
 import {selectProductCategories} from "./store/selectors/menu.selectors";
 import {RoutePathEnum} from "./app-routing.module";
 import {selectCountProductsInCart} from "./store/selectors/cart-page.selectors";
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',

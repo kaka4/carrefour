@@ -1,17 +1,17 @@
-import { NgModule, isDevMode } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import {isDevMode, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {RouteReuseStrategy} from '@angular/router';
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
+import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {StoreModule} from '@ngrx/store';
+import {EffectsModule} from '@ngrx/effects';
 import {CARREFOUR_FEATURE_NAME} from "./store/state/carrefour.state";
 import {CARREFOUR_REDUCERS} from "./store/reducers/app.reducer";
 import {CARREFOUR_EFFECTS} from "./store/effects";
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {ProductClientService} from "./core/services/product-client.service";

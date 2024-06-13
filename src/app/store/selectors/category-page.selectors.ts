@@ -1,8 +1,7 @@
 import {selectCarrefourRoot} from "./main.selectors";
-import {CarrefourState, CategoryPageState, HomePageState} from "../state/carrefour.state";
+import {CarrefourState, CategoryPageState} from "../state/carrefour.state";
 import {createSelector} from "@ngrx/store";
 import {Product} from "../../core/models/product.model";
-import {selectHomePageState} from "./home-page.selectors";
 
 
 const selectCategoryPageState = createSelector(

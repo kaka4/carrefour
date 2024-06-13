@@ -1,6 +1,6 @@
 import {Action, createReducer, on} from '@ngrx/store';
-import {CartPageState, HomePageState, INITIAL_CARREFOUR_STATE} from '../state/carrefour.state';
-import {CartPageActions, HomePageActions, ProductApiActions, SystemActions} from "../actions";
+import {CartPageState, INITIAL_CARREFOUR_STATE} from '../state/carrefour.state';
+import {CartPageActions, HomePageActions, SystemActions} from "../actions";
 
 type STATE = CartPageState | undefined;
 const initialState: CartPageState | undefined = INITIAL_CARREFOUR_STATE.cartPage;

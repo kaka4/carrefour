@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import {Action, createReducer, on} from '@ngrx/store';
 import {HomePageState, INITIAL_CARREFOUR_STATE} from '../state/carrefour.state';
 import {HomePageActions, ProductApiActions} from "../actions";
 

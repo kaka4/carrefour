@@ -1,6 +1,6 @@
-import { Action, createReducer, on } from '@ngrx/store';
-import {HomePageState, INITIAL_CARREFOUR_STATE, MenuState} from '../state/carrefour.state';
-import {MenuAction, ProductApiActions} from "../actions";
+import {Action, createReducer, on} from '@ngrx/store';
+import {INITIAL_CARREFOUR_STATE, MenuState} from '../state/carrefour.state';
+import {ProductApiActions} from "../actions";
 
 type STATE = MenuState | undefined;
 const initialState: MenuState | undefined = INITIAL_CARREFOUR_STATE.menu;

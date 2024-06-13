@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {
-  selectAllProductCart, selectCartDeliveryFee,
+  selectAllProductCart,
+  selectCartDeliveryFee,
   selectCountProductsInCart,
-  selectSumAllProductsInCart, selectTotalSumToPay
+  selectSumAllProductsInCart,
+  selectTotalSumToPay
 } from "../../store/selectors/cart-page.selectors";
 import {CartPageActions} from "../../store/actions";
 

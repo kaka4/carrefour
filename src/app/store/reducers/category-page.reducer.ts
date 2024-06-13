@@ -1,7 +1,6 @@
-import { Action, createReducer, on } from '@ngrx/store';
-import {CategoryPageState, HomePageState, INITIAL_CARREFOUR_STATE} from '../state/carrefour.state';
-import {CategoryPageActions, HomePageActions, ProductApiActions} from "../actions";
-import {getAllProductsFromCategorySucceeded} from "../actions/api/product-api.actions";
+import {Action, createReducer, on} from '@ngrx/store';
+import {CategoryPageState, INITIAL_CARREFOUR_STATE} from '../state/carrefour.state';
+import {CategoryPageActions, ProductApiActions} from "../actions";
 
 type STATE = CategoryPageState | undefined;
 const initialState: CategoryPageState | undefined = INITIAL_CARREFOUR_STATE.categoryPage;

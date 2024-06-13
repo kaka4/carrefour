@@ -1,4 +1,5 @@
 import {createAction} from "@ngrx/store";
+
 const menuActionPrefixType = '[Carrefour-SideMenu]';
 
 export const getAllProductCategories = createAction(

@@ -1,4 +1,4 @@
-import { createAction, props } from '@ngrx/store';
+import {createAction, props} from '@ngrx/store';
 import {Product, ProductCategory} from "../../../core/models/product.model";
 
 

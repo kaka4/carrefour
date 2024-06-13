@@ -1,7 +1,7 @@
 import {selectCarrefourRoot} from "./main.selectors";
-import {CarrefourState, CartPageState, HomePageState} from "../state/carrefour.state";
+import {CarrefourState, CartPageState} from "../state/carrefour.state";
 import {createSelector} from "@ngrx/store";
-import {ProductBasicInfos, ProductCart} from "../../core/models/product.model";
+import {ProductCart} from "../../core/models/product.model";
 import {DELIVERY_FEE, FREE_DELIVERY_MINIMUM_AMOUNT} from "../../core/config/app.config";
 
 

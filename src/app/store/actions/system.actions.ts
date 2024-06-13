@@ -1,5 +1,6 @@
 import {createAction, props} from "@ngrx/store";
 import {ProductCart} from "../../core/models/product.model";
+
 const systemActionPrefixType = '[Carrefour-System]';
 
 export const initApp = createAction(

@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { switchMap } from 'rxjs/operators';
-import { of } from 'rxjs';
-import { Store } from '@ngrx/store';
-import {CategoryPageActions, HomePageActions, ProductApiActions} from "../actions";
+import {Injectable} from '@angular/core';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {switchMap} from 'rxjs/operators';
+import {of} from 'rxjs';
+import {Store} from '@ngrx/store';
+import {CategoryPageActions, ProductApiActions} from "../actions";
 
 @Injectable()
 export class CategoryPageEffects {
